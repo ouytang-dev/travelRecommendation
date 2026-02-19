@@ -1,5 +1,19 @@
+:root {
+    /* Primary palette */
+    --primary-1: #0066cc; /* deep blue */
+    --primary-2: #3399ff; /* bright blue */
+    --primary-dark: #003d80; /* dark blue */
+
+    /* Accent */
+    --accent: #ffcc00; /* call-to-action (kept as warm accent) */
+
+    /* Text colors */
+    --on-primary: #ffffff;
+    --content-text: #003d80;
+}
+
 nav {
-    background: linear-gradient(90deg, #0066cc 0%, #3399ff 100%);
+    background: linear-gradient(90deg, var(--primary-1) 0%, var(--primary-2) 100%);
     padding: 12px 20px;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
@@ -9,7 +23,7 @@ nav {
 }
 
 nav > div:first-child {
-    color: #ffffff;
+    color: var(--on-primary);
     font-size: 1.4em;
     font-weight: 700;
     margin-right: 40px;
@@ -29,7 +43,7 @@ nav > div:first-child img {
 }
 
 #nav-links a {
-    color: #ffffff;
+    color: var(--on-primary);
     text-decoration: none;
     margin: 0 10px;
     font-weight: 600;
@@ -39,7 +53,7 @@ nav > div:first-child img {
 }
 
 #nav-links a:hover {
-    background-color: rgba(255,255,255,0.2);
+    background-color: rgba(255,255,255,0.12);
 }
 
 #searchForm {
@@ -51,8 +65,9 @@ nav > div:first-child img {
 #searchInput {
     padding: 6px 10px;
     border-radius: 20px;
-    border: 1px solid #004c99;
+    border: 1px solid var(--primary-dark);
     outline: none;
+    background: rgba(255,255,255,0.9);
 }
 
 #searchBtn,
@@ -67,27 +82,27 @@ nav > div:first-child img {
 }
 
 #searchBtn {
-    background-color: #005ab4;
-    color: white;
+    background-color: var(--primary-1);
+    color: var(--on-primary);
 }
 
 #searchBtn:hover {
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 #resetBtn {
-    background-color: #003d80;
-    color: white;
+    background-color: var(--primary-dark);
+    color: var(--on-primary);
 }
 
 #resetBtn:hover {
-    opacity: 0.9;
+    opacity: 0.95;
 }
 
 #bookBtn {
     display: block;
     margin: 20px auto 0;
-    background-color: #ffcc00;
+    background-color: var(--accent);
     color: #000;
     border: none;
     padding: 10px 20px;
@@ -107,27 +122,90 @@ nav > div:first-child img {
     display: inline-block;
 }
 
-#content {
-    max-width: 800px;
+#content, .content, [class*="content"] {
+    max-width: 900px;
     margin: 60px auto;
-    background-color: transparent;
-    padding: 40px 30px;
+    background: rgba(255,255,255,0.04); /* subtle overlay to lift text */
+    padding: 36px 28px;
     border-radius: 12px;
     text-align: center;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+    box-shadow: 0 6px 18px rgba(0,0,0,0.18);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: var(--content-text); /* Using theme blue */
+    border: 1px solid rgba(255,255,255,0.05);
+    backdrop-filter: blur(4px);
 }
 
-#content h1 {
-    font-size: 2.5em;
-    margin-bottom: 20px;
-    color: #ffffff;
+.content h1,
+#content h1,
+[class*="content"] h1 {
+    font-size: 2.4em;
+    margin-bottom: 18px;
+    color: inherit;
+    text-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
-#content p {
-    font-size: 1.1em;
-    line-height: 1.5;
-    color: #f0f0f0;
+/* Make content titles transparent so they don't show any background */
+.contentTitle,
+#content .contentTitle,
+[class*="content"] .contentTitle {
+    background: none !important;
+    background-color: transparent !important;
+    background-image: none !important;
+    color: inherit;
+    padding: 0;
+    border: none;
+    box-shadow: none !important;
+    display: inline-block;
+}
+
+.content ul,
+#content ul,
+[class*="content"] ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 12px 0;
+}
+
+.content p,
+#content p,
+[class*="content"] p {
+    font-size: 1.05em;
+    line-height: 1.6;
+    color: inherit;
+    margin-bottom: 14px;
+}
+
+.content a,
+#content a,
+[class*="content"] a {
+    color: var(--primary-2);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.content a:hover,
+#content a:hover,
+[class*="content"] a:hover {
+    text-decoration: underline;
+}
+
+.content button,
+#content button,
+[class*="content"] button {
+    margin-top: 12px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 600px) {
+    .content, #content, [class*="content"] {
+        padding: 24px 18px;
+        margin: 30px 18px;
+    }
+
+    .content h1, #content h1, [class*="content"] h1 {
+        font-size: 1.8em;
+    }
 }
 
 /* homepage background */
