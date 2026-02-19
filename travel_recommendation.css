@@ -150,7 +150,7 @@ nav > div:first-child img {
 #content .contentTitle,
 [class*="content"] .contentTitle {
     background: none !important;
-    background-color: transparent !important;
+    background-color: none !important;
     background-image: none !important;
     color: inherit;
     padding: 0;
