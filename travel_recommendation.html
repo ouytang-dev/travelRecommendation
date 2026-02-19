@@ -14,22 +14,24 @@
         </div>
         <form id="searchForm">
             <input type="text" id="searchInput" placeholder="Enter a destination or keyword" />
-            <button type="button" id="searchBtn">Search</button>
-            <button type="reset" id="resetBtn">Reset</button>
+            <button type="button" id="btnSearch">Search</button>
+            <button type="reset" id="btnReset">Reset</button>
         </form>
     </nav>
-    <div class="content">
-        <h1 id="statement">Explore<br>Dream<br>Destination</h1>
-        <p id="description">Discover the world's most beautiful places with our expert travel recommendations.</p>
-        <button id="bookBtn">Book Now</button>
-        <div id="socialIcons">
-                <img src="twitter.png" alt="Twitter" class="social-icon"/>
-                <img src="facebook.png" alt="Facebook" class="social-icon"/>
-                <img src="instagram.png" alt="Instagram" class="social-icon"/>
-                <img src="youtube.png" alt="YouTube" class="social-icon"/>
+    <div id="container">
+        <div id="intro" class="content">
+            <h1 id="introTitle">Explore<br>Dream<br>Destination</h1>
+            <p id="introDescription">Discover the world's most beautiful places with our expert travel recommendations.</p>
+            <button id="bookBtn">Book Now</button>
+            <div id="socialIcons">
+                    <img src="twitter.png" alt="Twitter" class="social-icon"/>
+                    <img src="facebook.png" alt="Facebook" class="social-icon"/>
+                    <img src="instagram.png" alt="Instagram" class="social-icon"/>
+                    <img src="youtube.png" alt="YouTube" class="social-icon"/>
+            </div>
         </div>
+        <div id="results"  class="content"></div>
     </div>
-        <!-- Content will go here -->
-    
+    <script src="travel_recommendation.js"></script>
 </body>
 </html>

@@ -70,33 +70,38 @@ nav > div:first-child img {
     background: rgba(255,255,255,0.9);
 }
 
-#searchBtn,
-#resetBtn {
-    padding: 6px 14px;
+#searchBtn, #resetBtn, #btnSearch, #btnReset, nav button[type="button"] {
+    padding: 6px 12px;
     margin-left: 8px;
     border: none;
-    border-radius: 20px;
+    border-radius: 18px;
     cursor: pointer;
     font-weight: 600;
-    transition: opacity 0.2s;
+    transition: opacity 0.18s, transform 0.12s;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.12);
 }
 
-#searchBtn {
+/* Primary (search) button */
+#searchBtn, #btnSearch {
     background-color: var(--primary-1);
     color: var(--on-primary);
 }
 
-#searchBtn:hover {
+#searchBtn:hover, #btnSearch:hover {
     opacity: 0.95;
+    transform: translateY(-1px);
 }
 
-#resetBtn {
-    background-color: var(--primary-dark);
+/* Reset / secondary button */
+#resetBtn, #btnReset {
+    background-color: transparent;
     color: var(--on-primary);
+    border: 1px solid rgba(255,255,255,0.18);
 }
 
-#resetBtn:hover {
+#resetBtn:hover, #btnReset:hover {
     opacity: 0.95;
+    background-color: rgba(255,255,255,0.06);
 }
 
 #bookBtn {
